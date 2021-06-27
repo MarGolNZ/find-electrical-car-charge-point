@@ -21,8 +21,9 @@ const App = () => {
 
   return (
     <>
+      <div style={{ height: '500px' }}><ChargePoinstMap latitude={latitude} longitude={longitude} /></div>
 
-      <ChargePoinstMap latitude={latitude} longitude={longitude} />
+
       <code>
         Test Geolocation Data
         latitude: {latitude}<br />
