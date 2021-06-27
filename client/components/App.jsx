@@ -15,23 +15,23 @@ const App = () => {
     error,
   } = usePosition(watch)
 
+  if (latitude == undefined || longitude == undefined) {
+    return "Map is loading..."
+  }
+
   return (
     <>
-      <div style={{ width: '100%' }} >
-        <ChargePoinstMap />
-      </div>
-      < div className='row' >
-        <div className='col'>
-          <code>
-            Test Geolocation Data
-            latitude: {latitude}<br />
-            longitude: {longitude}<br />
-            timestamp: {timestamp}<br />
-            accuracy: {accuracy && `${accuracy}m`}<br />
-            error: {error}
-          </code>
-        </div>
-      </div >
+
+      <ChargePoinstMap latitude={latitude} longitude={longitude} />
+      <code>
+        Test Geolocation Data
+        latitude: {latitude}<br />
+        longitude: {longitude}<br />
+        timestamp: {timestamp}<br />
+        accuracy: {accuracy && `${accuracy}m`}<br />
+        error: {error}
+      </code>
+
 
     </>
   )

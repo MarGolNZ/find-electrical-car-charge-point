@@ -1,8 +1,8 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
-export default function ChargePoinstMap() {
-    const position = [51.505, -0.09]
+export default function ChargePoinstMap(props) {
+    const position = [props.latitude, props.longitude]
 
     return (
         <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
