@@ -9,7 +9,10 @@ server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 server.use(cors('*'))
 
-server.get('/api/v1/charge-point', (req, res) => {
+server.get('/api/v1/charge-point/:latitude/:longitude', (req, res) => {
+    const latitude = req.params.latitude
+    const longitude = req.params.longitude
+    console.log('latitude', latitude, 'longitude', longitude)
     request
         .get(`https://api.openchargemap.io/v3/poi/?output=json&countryid=161,18&includecomments=true&maxresults=100&compact=false&verbose=false/?key=${process.env.REACT_APP_API_KEY}`)
         .then(response => res.json(response.body))

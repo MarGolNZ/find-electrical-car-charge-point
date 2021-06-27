@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Nav from 'react-bootstrap/Nav'
-// import GetChargeInfo from "./GetChargeInfo"
+import GetChargeInfo from "./GetChargeInfo"
 // import SearchChargePoint from './SearchChargePoint'
 import ChargePoinstMap from './ChargePoinstMap'
 import { usePosition } from 'use-position'
