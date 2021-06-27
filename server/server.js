@@ -11,9 +11,13 @@ server.use(cors('*'))
 
 server.get('/api/v1/charge-point', (req, res) => {
     request
-        .get(`https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=100&compact=true&verbose=false/?key=${process.env.REACT_APP_API_KEY}`)
+        .get(`https://api.openchargemap.io/v3/poi/?output=json&countryid=161,18&includecomments=true&maxresults=100&compact=false&verbose=false/?key=${process.env.REACT_APP_API_KEY}`)
         .then(response => res.json(response.body))
         .catch(e => console.log(e))
 })
 
 module.exports = server
+
+
+//CountryID: 161 (NZ)
+//CountryID: 18 (AU)

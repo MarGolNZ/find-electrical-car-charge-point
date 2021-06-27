@@ -1,6 +1,8 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav'
 import GetChargeInfo from "./GetChargeInfo"
+// import SearchChargePoint from './SearchChargePoint'
+import ChargePoinstMap from './ChargePoinstMap'
 
 const App = () => {
   return (
@@ -32,6 +34,8 @@ const App = () => {
 
       </div>
       <div className='row'>
+        {/* <div><SearchChargePoint /></div> */}
+        <div className='col'><ChargePoinstMap /></div>
         <div className='col'><GetChargeInfo /></div>
       </div>
 
