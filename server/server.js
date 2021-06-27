@@ -14,7 +14,7 @@ server.get('/api/v1/charge-point/:latitude/:longitude', (req, res) => {
     const longitude = req.params.longitude
     console.log('latitude', latitude, 'longitude', longitude)
     request
-        .get(`https://api.openchargemap.io/v3/poi/?output=json&countryid=161,18&includecomments=true&maxresults=100&compact=false&verbose=false/?key=${process.env.REACT_APP_API_KEY}`)
+        .get(`https://api.openchargemap.io/v3/poi/?output=json&countryid=161,18&includecomments=true&maxresults=20&compact=false&verbose=false/?key=${process.env.REACT_APP_API_KEY}&longitude=${longitude}&latitude=${latitude}&distance=30&distanceunit=KM`)
         .then(response => res.json(response.body))
         .catch(e => console.log(e))
 })

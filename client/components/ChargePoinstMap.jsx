@@ -10,7 +10,7 @@ export default function ChargePoinstMap(props) {
     useEffect(() => {
         getChargeInfo(position)
             .then(pointData => {
-                console.log(pointData[0])
+                console.log(pointData)
                 // setChargePoint(pointData[0])
                 return null
             })
