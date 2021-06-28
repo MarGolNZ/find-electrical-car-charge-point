@@ -19,32 +19,35 @@ const App = () => {
 
   useEffect(() => {
     getChargeInfo([latitude, longitude])
-      .then(position => {
-        console.log(position[0])
-        setChargePoints(position)
-        return null
+      .then(positions => {
+        const usedPositionIds = []
+        console.log(positions)
+        setChargePoints(positions.filter(function (position) {
+          !usedPositionIds.includes(position.id))
       })
-      .catch(e => console.log(e))
-  }, [])
+    return null
+  })
+    .catch(e => console.log(e))
+}, [])
 
-  if (latitude == undefined || longitude == undefined) {
-    return (
-      <div className='row' style={{ textAlign: 'center', marginTop: '150px' }}>
-        <div className="col" >
-          <h2>Map is loading... </h2><br />
-          <p><BounceLoader color={'blue'} size={60} /></p>
-        </div>
-      </div>
-    )
-  }
-
+if (latitude == undefined || longitude == undefined) {
   return (
-    <>
-      <Header />
-      <ChargePointMap latitude={latitude} longitude={longitude} chargePoints={chargePoints} />
-      <ShowChargePointInfo chargePoints={chargePoints} />
-    </>
+    <div className='row' style={{ textAlign: 'center', marginTop: '150px' }}>
+      <div className="col" >
+        <h2>Map is loading... </h2><br />
+        <p><BounceLoader color={'blue'} size={60} /></p>
+      </div>
+    </div>
   )
+}
+
+return (
+  <>
+    <Header />
+    <ChargePointMap latitude={latitude} longitude={longitude} chargePoints={chargePoints} />
+    <ShowChargePointInfo chargePoints={chargePoints} />
+  </>
+)
 }
 
 export default App
