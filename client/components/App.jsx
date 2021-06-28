@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import ChargePointMap from './ChargePointMap'
 import { usePosition } from 'use-position'
 import BounceLoader from "react-spinners/BounceLoader"
+import ShowChargePointInfo from './ShowChargePointInfo'
+import { getChargeInfo } from '../apiClient'
 
 const App = () => {
-
+  const [chargePoints, setChargePoints] = useState([])
   const watch = true;
   const {
     latitude,
@@ -14,6 +16,16 @@ const App = () => {
     accuracy,
     error,
   } = usePosition(watch)
+
+  useEffect(() => {
+    getChargeInfo([latitude, longitude])
+      .then(position => {
+        console.log(position[0])
+        setChargePoints(position)
+        return null
+      })
+      .catch(e => console.log(e))
+  }, [])
 
   if (latitude == undefined || longitude == undefined) {
     return (
@@ -29,7 +41,8 @@ const App = () => {
   return (
     <>
       <Header />
-      <ChargePointMap latitude={latitude} longitude={longitude} />
+      <ChargePointMap latitude={latitude} longitude={longitude} chargePoints={chargePoints} />
+      <ShowChargePointInfo chargePoints={chargePoints} />
     </>
   )
 }
