@@ -30,7 +30,8 @@
     "plugins": [
       "@babel/plugin-proposal-class-properties",
       "@babel/plugin-proposal-object-rest-spread",
-      "@babel/plugin-transform-runtime"
+      "@babel/plugin-transform-runtime",
+      "@emotion/babel-plugin"
     ]
   },
   "eslintConfig": {
@@ -40,12 +41,14 @@
     ]
   },
   "dependencies": {
+    "@emotion/react": "^11.4.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "leaflet": "^1.7.1",
     "react-bootstrap": "^1.6.1",
     "react-leaflet": "^3.2.0",
+    "react-spinners": "^0.11.0",
     "use-position": "0.0.8"
   },
   "devDependencies": {
@@ -55,6 +58,7 @@
     "@babel/plugin-transform-runtime": "7.13.1",
     "@babel/preset-env": "7.13.0",
     "@babel/preset-react": "7.12.13",
+    "@emotion/babel-plugin": "^11.3.0",
     "@testing-library/react": "11.2.5",
     "babel-loader": "^8.2.2",
     "eslint": "7.9.0",

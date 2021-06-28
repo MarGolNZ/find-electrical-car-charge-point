@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import Nav from 'react-bootstrap/Nav'
-import GetChargeInfo from "./GetChargeInfo"
-// import SearchChargePoint from './SearchChargePoint'
+import React, { useState } from 'react'
+import Header from './Header'
 import ChargePoinstMap from './ChargePoinstMap'
 import { usePosition } from 'use-position'
+import { css } from "@emotion/react";
+import ClipLoader from "react-spinners/ClipLoader"
 
 const App = () => {
+  let [loading, setLoading] = useState(true);
+  let [color, setColor] = useState("#ffffff")
+
+
+
   const watch = true;
   const {
     latitude,
@@ -16,23 +21,22 @@ const App = () => {
   } = usePosition(watch)
 
   if (latitude == undefined || longitude == undefined) {
-    return "Map is loading..."
+    return (
+      <div className="sweet-loading">
+        <button onClick={() => setLoading(!loading)}>Toggle Loader</button>
+        <input value={color} onChange={(input) => setColor(input.target.value)} placeholder="Color of the loader" />
+
+        <ClipLoader color={color} loading={loading} css={override} size={150} />
+      </div>
+    )
   }
 
   return (
     <>
-      <div><ChargePoinstMap latitude={latitude} longitude={longitude} /></div>
+      <Header />
+      <ChargePoinstMap latitude={latitude} longitude={longitude} />
     </>
   )
 }
 
 export default App
-
-//  <code>
-//         Test Geolocation Data
-//         latitude: {latitude}<br />
-//         longitude: {longitude}<br />
-//         timestamp: {timestamp}<br />
-//         accuracy: {accuracy && `${accuracy}m`}<br />
-//         error: {error}
-//       </code>
