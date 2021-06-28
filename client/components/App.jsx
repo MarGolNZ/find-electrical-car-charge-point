@@ -21,21 +21,18 @@ const App = () => {
 
   return (
     <>
-      <div style={{ height: '500px' }}><ChargePoinstMap latitude={latitude} longitude={longitude} /></div>
-
-
-      <code>
-        Test Geolocation Data
-        latitude: {latitude}<br />
-        longitude: {longitude}<br />
-        timestamp: {timestamp}<br />
-        accuracy: {accuracy && `${accuracy}m`}<br />
-        error: {error}
-      </code>
-
-
+      <div><ChargePoinstMap latitude={latitude} longitude={longitude} /></div>
     </>
   )
 }
 
 export default App
+
+//  <code>
+//         Test Geolocation Data
+//         latitude: {latitude}<br />
+//         longitude: {longitude}<br />
+//         timestamp: {timestamp}<br />
+//         accuracy: {accuracy && `${accuracy}m`}<br />
+//         error: {error}
+//       </code>
