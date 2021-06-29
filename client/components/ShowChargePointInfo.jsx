@@ -1,11 +1,6 @@
 import React from 'react'
-import { getChargeInfo } from '../apiClient.js'
 
 export default function GetChargeInfo(props) {
-
-
-
-
     return (
         <>
             <div className='row'>
@@ -26,6 +21,4 @@ export default function GetChargeInfo(props) {
             </div>
         </>
     )
-    // { AddressInfo: { AddressLine1: '', StateOrProvince: '', Title: '', Town: '' } }
-
 }
