@@ -44,8 +44,10 @@ const App = () => {
   return (
     <>
       <Header />
-      <ChargePointMap latitude={latitude} longitude={longitude} chargePoints={chargePoints} />
-      <ShowChargePointInfo chargePoints={chargePoints} />
+      <div className='row' style={{ maxWidth: '90%', margin: '0 auto' }}>
+        <div className='col-6'><ChargePointMap latitude={latitude} longitude={longitude} chargePoints={chargePoints} /></div>
+        <div className='col-6'><ShowChargePointInfo chargePoints={chargePoints} /></div>
+      </div>
     </>
   )
 }
