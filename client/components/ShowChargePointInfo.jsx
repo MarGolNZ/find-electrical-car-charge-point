@@ -3,12 +3,12 @@ import React from 'react'
 export default function GetChargeInfo(props) {
 
     if (props.chargePoints.length === 0) {
-        return <div>Loading Charging Stations near you...</div>
+        return <h2>Looking for sharging stations near you...</h2>
 
     } else {
         return (
             <>
-                <h2> Charging Stations near you:</h2>
+                <h2> Found following charging stations near you:</h2>
                 <ul>
                     {props.chargePoints.map(chargePointAddress => <li key={chargePointAddress.UUID}>
                         Name: {chargePointAddress.AddressInfo.Title}<br />

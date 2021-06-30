@@ -9,10 +9,6 @@ export default function ChargePoinstMap(props) {
         iconSize: [40, 60]
     })
 
-    if (props.chargePoints.length > 0) {
-        console.log('props info', props.chargePoints[0].AddressInfo.Latitude)
-    }
-
     return (
         <MapContainer center={position} zoom={10} scrollWheelZoom={false} style={{ height: '500px', width: '100%', margin: '0 auto' }}>
             <TileLayer
