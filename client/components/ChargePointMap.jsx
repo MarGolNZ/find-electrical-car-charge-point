@@ -14,7 +14,7 @@ export default function ChargePoinstMap(props) {
     }
 
     return (
-        <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{ height: '500px', width: '100%', margin: '0 auto' }}>
+        <MapContainer center={position} zoom={10} scrollWheelZoom={false} style={{ height: '500px', width: '100%', margin: '0 auto' }}>
             <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

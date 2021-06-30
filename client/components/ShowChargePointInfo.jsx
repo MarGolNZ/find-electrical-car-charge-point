@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function GetChargeInfo(props) {
 
-    if (props.chargePoints == undefined) {
-        return <div>Loading...</div>
+    if (props.chargePoints.length === 0) {
+        return <div>Loading Charging Stations near you...</div>
 
     } else {
         return (
