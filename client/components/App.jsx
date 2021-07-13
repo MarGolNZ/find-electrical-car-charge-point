@@ -5,6 +5,7 @@ import { usePosition } from 'use-position'
 import BounceLoader from "react-spinners/BounceLoader"
 import ShowChargePointInfo from './ShowChargePointInfo'
 import { getChargeInfo } from '../apiClient'
+import Location from './Location'
 
 const App = () => {
   const [chargePoints, setChargePoints] = useState([])
@@ -32,23 +33,24 @@ const App = () => {
 
   if (latitude == undefined || longitude == undefined) {
     return (
-      <div className='row' style={{ textAlign: 'center', marginTop: '150px' }}>
-        <div className="col" >
-          <h2>Map is loading... </h2><br />
-          <p><BounceLoader color={'blue'} size={60} /></p>
-        </div>
+      <div className='loader'>
+        <h2>Map is loading... </h2>
+        <BounceLoader color={'blue'} size={60} />
       </div>
     )
   }
 
   return (
-    <>
-      <Header />
-      <div className='row' style={{ maxWidth: '90%', margin: '0 auto' }}>
-        <div className='col-6'><ChargePointMap latitude={latitude} longitude={longitude} chargePoints={chargePoints} /></div>
-        <div className='col-6'><ShowChargePointInfo chargePoints={chargePoints} /></div>
+    <div className='flex-container'>
+      <div className='header'>
+        <Header />
+        <Location />
       </div>
-    </>
+      <div className='main'>
+        <ChargePointMap latitude={latitude} longitude={longitude} chargePoints={chargePoints} />
+        <ShowChargePointInfo chargePoints={chargePoints} />
+      </div>
+    </div>
   )
 }
 

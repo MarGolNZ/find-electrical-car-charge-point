@@ -1,0 +1,56 @@
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 20px;
+  margin: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    /* width: 700px; */
+    background: olive
+  }
+  label {
+    display: block
+  }
+  }
+
+@media screen and (max-width: 320px) {
+  .flex-container {
+    flex-direction: column;
+    /* width: 300px; */
+    background: green
+  }
+  label {
+    display: block
+  }
+  }
+
+@media screen and (min-width: 1200px) {
+  .flex-container {
+    flex-direction: row;
+    /* width: 1100px; */
+    background: blue
+  }
+}
+/* 
+body {
+  background-color: tan;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+/* @media screen and (max-width: 992px) {
+  body {
+    background-color: blue;
+  }
+} */
+
+/* On screens that are 600px or less, set the background color to olive */
+/* @media screen and (max-width: 600px) {
+  body {
+    background-color: olive;
+  }
+} */ 

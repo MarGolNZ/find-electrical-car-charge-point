@@ -7,7 +7,7 @@ export default function GetChargeInfo(props) {
 
     } else {
         return (
-            <>
+            <div className='info'>
                 <h2> Found following charging stations near you:</h2>
                 <ul>
                     {props.chargePoints.map(chargePointAddress => <li key={chargePointAddress.UUID}>
@@ -20,7 +20,7 @@ export default function GetChargeInfo(props) {
                         Longitude: {chargePointAddress.AddressInfo.Longitude}<br />
                     </li>)}
                 </ul>
-            </>
+            </div>
         )
     }
 }
