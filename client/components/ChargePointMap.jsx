@@ -6,7 +6,7 @@ export default function ChargePoinstMap(props) {
     const position = [props.latitude, props.longitude]
     const icon = L.icon({
         iconUrl: '/icon-1.png',
-        iconSize: [40, 60]
+        iconSize: [40, 'auto']
     })
 
     return (

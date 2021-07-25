@@ -17,10 +17,10 @@ const App = () => {
       getChargeInfo([latitude, longitude])
         .then(positions => {
           const usedPositionIds = []
-          console.log(positions)
+          console.log(positions[0].ID)
           setChargePoints(positions.filter(function (position) {
-            if (!usedPositionIds.includes(position.id)) {
-              usedPositionIds.push(position.id)
+            if (!usedPositionIds.includes(position.ID)) {
+              usedPositionIds.push(position.ID)
               return true
             } else {
               return false

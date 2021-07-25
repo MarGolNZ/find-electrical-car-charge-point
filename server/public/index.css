@@ -1,4 +1,4 @@
-
+/* 
 .flex-container {
   display: flex;
   flex-flow: row wrap;
@@ -11,7 +11,7 @@
   .flex-container {
     flex-direction: column;
     /* width: 700px; */
-    background: olive
+    /* background: olive
   }
   label {
     display: block
@@ -22,7 +22,7 @@
   .flex-container {
     flex-direction: column;
     /* width: 300px; */
-    background: green
+    /* background: green
   }
   label {
     display: block
@@ -31,11 +31,11 @@
 
 @media screen and (min-width: 1200px) {
   .flex-container {
-    flex-direction: row;
+    flex-direction: row; */
     /* width: 1100px; */
-    background: blue
+    /* background: blue
   }
-}
+} */
 /* 
 body {
   background-color: tan;
