@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import React from 'react'
+import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet'
 import L from 'leaflet';
 
 export default function ChargePoinstMap(props) {
@@ -25,8 +25,8 @@ export default function ChargePoinstMap(props) {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {props.chargePoints.map(point => <Marker position={[point.AddressInfo.Latitude, point.AddressInfo.Longitude]} icon={greenIcon} key={point.UUID}></Marker>)}
-                <Marker position={position}><Popup>Your current Location</Popup></Marker>
+                {props.chargePoints.map(point => <Marker position={[point.AddressInfo.Latitude, point.AddressInfo.Longitude]} icon={greenIcon} key={point.UUID}><Tooltip>Address: {point.AddressInfo.AddressLine1} {point.AddressInfo.AddressLine2} {point.AddressInfo.StateOrProvince} {point.AddressInfo.Town} <br />Distance from your current location: {Math.round(point.AddressInfo.Distance)}km</Tooltip></Marker>)}
+                <Marker position={position}><Tooltip>Your current Location</Tooltip></Marker>
             </MapContainer>
         </div>
     )

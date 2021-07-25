@@ -5,7 +5,6 @@ import { usePosition } from 'use-position'
 import BounceLoader from "react-spinners/BounceLoader"
 import ShowChargePointInfo from './ShowChargePointInfo'
 import { getChargeInfo } from '../apiClient'
-import Location from './Location'
 
 const App = () => {
   const [chargePoints, setChargePoints] = useState([])
@@ -17,7 +16,7 @@ const App = () => {
       getChargeInfo([latitude, longitude])
         .then(positions => {
           const usedPositionIds = []
-          console.log(positions[0].ID)
+          console.log(positions[0])
           setChargePoints(positions.filter(function (position) {
             if (!usedPositionIds.includes(position.ID)) {
               usedPositionIds.push(position.ID)
@@ -44,7 +43,6 @@ const App = () => {
     <div className='flex-container'>
       <div className='header'>
         <Header />
-        <Location />
       </div>
       <div className='main'>
         <ChargePointMap latitude={latitude} longitude={longitude} chargePoints={chargePoints} />

@@ -1,3 +1,30 @@
+body {
+  background-color: #F1FFCA;
+}
+.header-car {
+  height: 250px;
+}
+
+.header-text {
+  padding-top: 50px;
+  text-align: center;
+  color: #1C2E35
+}
+
+.map {
+width: 80%;
+display: block;
+margin: 0 auto
+}
+
+.location-form {
+  margin-top: 50px
+}
+
+.location-header {
+  margin-top: 50px;
+  text-align: center;
+}
 /* 
 .flex-container {
   display: flex;
@@ -54,3 +81,5 @@ body {
     background-color: olive;
   }
 } */ 
+
+

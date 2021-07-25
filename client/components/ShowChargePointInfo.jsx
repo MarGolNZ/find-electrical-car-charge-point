@@ -8,18 +8,18 @@ export default function GetChargeInfo(props) {
     } else {
         return (
             <div className='info'>
-                <h2> Found following charging stations near you:</h2>
-                <ul>
-                    {props.chargePoints.map(chargePointAddress => <li key={chargePointAddress.UUID}>
-                        Name: {chargePointAddress.AddressInfo.Title}<br />
-                        State: {chargePointAddress.AddressInfo.StateOrProvince}<br />
-                        City: {chargePointAddress.AddressInfo.Town}<br />
-                        Address: {chargePointAddress.AddressInfo.AddressLine1}<br />
-                        Comments: {chargePointAddress.AddressInfo.AccessComments}<br />
-                        Latitude: {chargePointAddress.AddressInfo.Latitude}<br />
-                        Longitude: {chargePointAddress.AddressInfo.Longitude}<br />
-                    </li>)}
-                </ul>
+                <h2 className='location-header'> Found following charging stations near you:</h2>
+                <div className="card">
+                    <ul className="list-group list-group-flush">
+                        {props.chargePoints.map(chargePointAddress => <li className="list-group-item" key={chargePointAddress.UUID}>
+                            <h3>{chargePointAddress.AddressInfo.Title}</h3>
+                            Address: {chargePointAddress.AddressInfo.AddressLine1}<br />
+                            Comments: {chargePointAddress.AddressInfo.AccessComments}<br />
+                            City: {chargePointAddress.AddressInfo.Town}<br />
+                            State: {chargePointAddress.AddressInfo.StateOrProvince}<br />
+                        </li>)}
+                    </ul>
+                </div>
             </div>
         )
     }

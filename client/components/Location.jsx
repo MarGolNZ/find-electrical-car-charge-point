@@ -6,17 +6,22 @@ export default function Location() {
 
     function handleChange(evt) {
         console.log(evt.target.value)
-    }
-
-    function handleClick(evt) {
         setLocation(evt.target.value)
     }
 
+    function handleSubmit(evt) {
+
+    }
+
     return (
-        <div className='box2'>
-            <label>Search for a location</label>
-            <input type='text' value={location} placeholder='enter location' onChange={handleChange}></input>
-            <button type='submit' onClick={handleClick}>Search</button>
+        <div className='location-form'>
+            <div className="form-row" onSubmit={handleSubmit}>
+                <div className="col-6">
+                    <input type="text" className="form-control" id="formGroupExampleInput" value={location} placeholder='Search for location' onChange={handleChange}></input>
+                </div>
+                <div className="col-6"><button type="button" className="btn btn-secondary">Search</button>
+                </div>
+            </div>
         </div>
     )
 }
