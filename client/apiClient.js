@@ -1,6 +1,8 @@
 import request from 'superagent'
 
-export function getGreeting() {
-  return request.get('/greeting')
-                .then(res => res.body.greeting)
+export function getChargeInfo(position) {
+    return request
+        .get(`/api/v1/charge-point/${position[0]}/${position[1]}`)
+        .then(res => res.body)
+        .catch(e => console.log(e))
 }
