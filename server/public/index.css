@@ -1,20 +1,22 @@
-body {
-  background-color: #F1FFCA;
-}
-
-.header {
-  position: absolute;
+.header-text {
+  position: relative;
   top: 0;
-  text-align: center;
+  text-align: right;
   color: #1C2E35;
   z-index: 10000;
   text-align: right;
+  background-color: transparent;
 }
 
 .map {
 width: 100%;
 display: block;
 margin: 0 auto
+}
+
+.loader {
+  display: block;
+  margin: 0 auto
 }
 
 /* 

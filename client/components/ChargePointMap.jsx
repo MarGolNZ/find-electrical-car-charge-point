@@ -1,13 +1,9 @@
 import React from 'react'
-import { MapContainer, TileLayer, Marker, Popup, Legend } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet';
 
 export default function ChargePoinstMap(props) {
     const position = [props.latitude, props.longitude]
-    // const icon = L.icon({
-    //     iconUrl: 'vectorstock_33740292.png', // attribution <a href="https://www.vectorstock.com/royalty-free-vector/eco-car-icon-for-web-and-mobile-vector-33740292">Vector image by VectorStock / vectorstock</a>
-    //     iconSize: [40, 'auto']
-    // })
 
     const greenIcon = new L.Icon({
         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
@@ -20,15 +16,9 @@ export default function ChargePoinstMap(props) {
 
     return (
         <>
-            <div className='header'>
-                <div className='row'>
-                    <div className='col'>
-                        <h3 className='header-text'><i className="fas fa-charging-station"> Find Electrical Charge Point</i></h3>
-                    </div>
-                </div>
-            </div>
-            <div className='map'>
-                <MapContainer className='map-container' center={position} zoom={10} scrollWheelZoom={true} style={{ height: '400px', width: '100%' }}>
+            <h3 className='header-text'><i className="fas fa-charging-station"> Find Electrical Charge Point</i></h3>
+            <div className='map' data-testid="map-element" style={{ height: '500px', width: '100%' }}>
+                <MapContainer className='map-container' center={position} zoom={10} scrollWheelZoom={true} style={{ height: '100%', width: '100%' }}>
                     <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -40,6 +30,3 @@ export default function ChargePoinstMap(props) {
         </>
     )
 }
-
-
-//<a href='https://www.freepik.com/vectors/car'>Car vector created by stories - www.freepik.com</a>

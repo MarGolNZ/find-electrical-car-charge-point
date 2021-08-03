@@ -38,11 +38,7 @@ const App = () => {
   }
 
   return (
-    <div className='flex-container'>
-      <div className='main'>
-        <ChargePointMap latitude={latitude} longitude={longitude} chargePoints={chargePoints} />
-      </div>
-    </div>
+    <ChargePointMap latitude={latitude} longitude={longitude} chargePoints={chargePoints} />
   )
 }
 
